@@ -39,11 +39,12 @@
     },
     // create()- related functions
     setupBackground: function () {
-        this.sea = this.add.tileSprite(0, 0, this.game.width, this.game.height, 'sea');
-        this.sea.autoScroll(0, 12);
+        //this.sea = this.add.tileSprite(0, 0, this.game.width, this.game.height, 'sea');
+        //this.sea.autoScroll(0, 12);
+        this.background = this.game.add.sprite(0, 0, 'background');
     },
     setupPlayer: function () {
-        this.player = this.add.sprite(this.game.width / 2, this.game.height - 50, 'player');
+        this.player = this.add.sprite(this.game.width / 2, this.game.height - 50, 'frigate_03');
         this.player.anchor.setTo(0.5, 0.5);
         this.player.animations.add('fly', [ 0, 1, 2 ], 20, true);
         this.player.animations.add('ghost', [ 3, 0, 3, 1 ], 20, true);
@@ -61,7 +62,7 @@
         this.enemyPool = this.add.group();
         this.enemyPool.enableBody = true;
         this.enemyPool.physicsBodyType = Phaser.Physics.ARCADE;
-        this.enemyPool.createMultiple(50, 'greenEnemy');
+        this.enemyPool.createMultiple(50, 'frigate_02');
         this.enemyPool.setAll('anchor.x', 0.5);
         this.enemyPool.setAll('anchor.y', 0.5);
         this.enemyPool.setAll('outOfBoundsKill', true);
@@ -83,7 +84,7 @@
         this.shooterPool = this.add.group();
         this.shooterPool.enableBody = true;
         this.shooterPool.physicsBodyType = Phaser.Physics.ARCADE;
-        this.shooterPool.createMultiple(20, 'whiteEnemy');
+        this.shooterPool.createMultiple(20, 'frigate_01');
         this.shooterPool.setAll('anchor.x', 0.5);
         this.shooterPool.setAll('anchor.y', 0.5);
         this.shooterPool.setAll('outOfBoundsKill', true);
@@ -194,11 +195,11 @@
         this.scoreText.anchor.setTo(0.5, 0.5);
     },
     setupAudio: function () {
-        /*this.explosionSFX = this.add.audio('explosion');
+        this.explosionSFX = this.add.audio('explosion');
         this.playerExplosionSFX = this.add.audio('playerExplosion');
         this.enemyFireSFX = this.add.audio('enemyFire');
         this.playerFireSFX = this.add.audio('playerFire');
-        this.powerUpSFX = this.add.audio('powerUp');*/
+        this.powerUpSFX = this.add.audio('powerUp');
     },
     // update()- related functions
     checkCollisions: function () {
@@ -221,6 +222,7 @@
             enemy.reset(this.rnd.integerInRange(20, this.game.width - 20), 0, 2);
             // also randomize the speed
             enemy.body.velocity.y = this.rnd.integerInRange(30, 60);
+            enemy.angle = 180;
             enemy.play('fly');
         }
         if (this.nextShooterAt < this.time.now && this.shooterPool.countDead() > 0) {
@@ -438,7 +440,7 @@
                 return;
             }
             bullet = this.bulletPool.getFirstExists(false);
-            bullet.reset(this.player.x, this.player.y - 20);
+            bullet.reset(this.player.x, this.player.y - 25);
             bullet.body.velocity.y = -500;
         } else {
             if (this.bulletPool.countDead() < this.weaponLevel * 2) {

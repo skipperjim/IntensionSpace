@@ -27,6 +27,7 @@
       this.load.image('titlepage', 'images/titlepage.png#grunt-cache-bust');
       this.load.image('sea', 'images/sea.png#grunt-cache-bust');
       this.load.image('space', 'images/space.png#grunt-cache-bust');
+      this.load.image('background', 'images/MilkyWay.jpg#grunt-cache-bust');
       this.load.image('bullet', 'images/bullet.png#grunt-cache-bust');
       this.load.image('enemyBullet', 'images/enemy-bullet.png#grunt-cache-bust');
       this.load.image('powerup1', 'images/powerup1.png#grunt-cache-bust');
@@ -35,6 +36,9 @@
       this.load.spritesheet('boss', 'images/boss.png#grunt-cache-bust', 93, 75);
       this.load.spritesheet('explosion', 'images/explosion.png#grunt-cache-bust', 32, 32);
       this.load.spritesheet('player', 'images/player.png#grunt-cache-bust', 64, 64);
+      this.load.image('frigate_01', 'images/frigate_01.png#grunt-cache-bust');
+      this.load.image('frigate_02', 'images/frigate_02.png#grunt-cache-bust');
+      this.load.image('frigate_03', 'images/frigate_03.png#grunt-cache-bust');
       this.load.audio('explosion', ['assets/explosion.ogg', 'assets/explosion.wav']);
       this.load.audio('playerExplosion', ['assets/player-explosion.ogg', 'assets/player-explosion.wav']);
       this.load.audio('enemyFire', ['assets/enemy-fire.ogg', 'assets/enemy-fire.wav']);
