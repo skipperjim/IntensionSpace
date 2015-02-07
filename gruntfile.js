@@ -25,7 +25,7 @@ module.exports = function (grunt) {
       src: 'src/js',
       js: '<%= project.src %>/game/{,*/}*.js',
       dest: 'build/js',
-      bundle: 'build/js/game.min.js',
+      bundle: 'build/js/app.min.js',
       port: properties.port,
       banner:
         '/*!\n' +
@@ -82,8 +82,8 @@ module.exports = function (grunt) {
     },
 
     browserify: {
-      game: {
-        src: ['<%= project.src %>/game/game.js'],
+      app: {
+        src: ['<%= project.src %>/game/app.js'],
         dest: '<%= project.bundle %>', 
         options: {
           transform: ['browserify-shim'],
@@ -177,7 +177,8 @@ module.exports = function (grunt) {
 
     uglify: { 
       options: {
-        banner: '<%= project.banner %>'
+        banner: '<%= project.banner %>',
+        beautify: true
       },
       dist: {
         files: {

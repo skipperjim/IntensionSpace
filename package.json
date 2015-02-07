@@ -2,7 +2,7 @@
   "name": "intension-space",
   "version": "0.1.0",
   "description": "A grunty Phaser.js game",
-  "main": "build/js/game.min.js",
+  "main": "build/js/app.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -44,8 +44,7 @@
     "grunt-contrib-uglify": "^0.7.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-open": "^0.2.3",
-    "grunt-pngmin": "^0.6.1",
-    "lodash": "^2.4.1"
+    "grunt-pngmin": "^0.6.1"
   },
   "dependencies": {
     "grunt-contrib-compress": "^0.9.1",
