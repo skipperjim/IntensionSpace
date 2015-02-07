@@ -1,8 +1,8 @@
 {
-  "name": "phaser-blank",
+  "name": "intension-space",
   "version": "0.1.0",
-  "description": "A grunty Phaser.js SDK",
-  "main": "build/js/app.min.js",
+  "description": "A grunty Phaser.js game",
+  "main": "build/js/game.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -29,21 +29,23 @@
     }
   },
   "devDependencies": {
-    "browserify": "^4.2.3",
-    "browserify-shim": "^3.5.0",
+    "browserify": "^8.1.3",
+    "browserify-shim": "^3.8.2",
     "grunt": "^0.4.5",
-    "grunt-browserify": "^2.1.4",
-    "grunt-cache-bust": "^0.3.9",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-connect": "^0.7.1",
-    "grunt-contrib-copy": "^0.5.0",
-    "grunt-contrib-jade": "^0.11.0",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-stylus": "^0.16.0",
-    "grunt-contrib-uglify": "^0.4.1",
+    "grunt-browserify": "^3.3.0",
+    "grunt-cache-bust": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-compress": "^0.9.1",
+    "grunt-contrib-connect": "^0.9.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-jade": "^0.14.1",
+    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-stylus": "^0.20.0",
+    "grunt-contrib-uglify": "^0.7.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-open": "^0.2.3",
-    "grunt-pngmin": "^0.6.1"
+    "grunt-pngmin": "^0.6.1",
+    "lodash": "^2.4.1"
   },
   "dependencies": {
     "grunt-contrib-compress": "^0.9.1",

@@ -1,6 +1,6 @@
 module.exports = { 
-  title: 'HTML5 Game in an Afternoon',
-  description: 'A basic game in Phaser.js', 
+  title: 'Intension: Space',
+  description: 'My game using Phaser', 
   port: 3017,
   liveReloadPort: 3018,
   showStats: true,

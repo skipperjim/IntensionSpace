@@ -26,9 +26,10 @@
       //  Here we load the rest of the assets our game needs.
       this.load.image('titlepage', 'images/titlepage.png#grunt-cache-bust');
       this.load.image('sea', 'images/sea.png#grunt-cache-bust');
+      this.load.image('space', 'images/space.png#grunt-cache-bust');
       this.load.image('bullet', 'images/bullet.png#grunt-cache-bust');
       this.load.image('enemyBullet', 'images/enemy-bullet.png#grunt-cache-bust');
-      this.load.image('powerup1', 'images/powerup1.png#grunt-cache-bust#grunt-cache-bust');
+      this.load.image('powerup1', 'images/powerup1.png#grunt-cache-bust');
       this.load.spritesheet('greenEnemy', 'images/enemy.png#grunt-cache-bust', 32, 32);
       this.load.spritesheet('whiteEnemy', 'images/shooting-enemy.png#grunt-cache-bust', 32, 32);
       this.load.spritesheet('boss', 'images/boss.png#grunt-cache-bust', 93, 75);

@@ -25,7 +25,7 @@ module.exports = function (grunt) {
       src: 'src/js',
       js: '<%= project.src %>/game/{,*/}*.js',
       dest: 'build/js',
-      bundle: 'build/js/app.min.js',
+      bundle: 'build/js/game.min.js',
       port: properties.port,
       banner:
         '/*!\n' +
@@ -38,7 +38,6 @@ module.exports = function (grunt) {
         ' * Made using Phaser Blank <https://github.com/lukewilde/phaser-blank/>\n' +
         ' */\n'
     },
-
     connect: { 
       dev: {
         options: {
@@ -47,7 +46,6 @@ module.exports = function (grunt) {
         }
       }
     },
-
     jshint: {
       files: [
         'gruntfile.js',
@@ -57,7 +55,6 @@ module.exports = function (grunt) {
         jshintrc: '.jshintrc'
       }
     },
-
     watch: {
       options: { 
         livereload: productionBuild ? false : properties.liveReloadPort
@@ -85,15 +82,13 @@ module.exports = function (grunt) {
     },
 
     browserify: {
-      app: {
-        src: ['<%= project.src %>/game/app.js'],
+      game: {
+        src: ['<%= project.src %>/game/game.js'],
         dest: '<%= project.bundle %>', 
         options: {
           transform: ['browserify-shim'],
-          watch: true,
-          bundleOptions: {
-            debug: !productionBuild
-          }
+          watch: true
+          //debug: !productionBuild
         }
       }
     },
@@ -108,7 +103,10 @@ module.exports = function (grunt) {
       options: {
         encoding: 'utf8',
         algorithm: 'md5',
-        length: 8
+        length: 16,
+        rename: true,
+        jsonOutput: false,
+        jsonOutputFilename: 'cachebuster.json'
       },
       assets: {
         files: [
