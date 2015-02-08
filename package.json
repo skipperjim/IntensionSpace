@@ -44,7 +44,8 @@
     "grunt-contrib-uglify": "^0.7.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-open": "^0.2.3",
-    "grunt-pngmin": "^0.6.1"
+    "grunt-pngmin": "^0.6.1",
+    "phaser": "^2.2.2"
   },
   "dependencies": {
     "grunt-contrib-compress": "^0.9.1",

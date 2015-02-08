@@ -67,6 +67,10 @@ module.exports = function (grunt) {
         files: 'src/templates/*.jade',
         tasks: ['jade']
       },
+      p2: {
+        files: 'src/js/lib/p2.js',
+        tasks: ['copy:p2']
+      },
       stylus: {
         files: 'src/style/*.styl',
         tasks: ['stylus']
@@ -103,10 +107,7 @@ module.exports = function (grunt) {
       options: {
         encoding: 'utf8',
         algorithm: 'md5',
-        length: 16,
-        rename: true,
-        jsonOutput: false,
-        jsonOutputFilename: 'cachebuster.json'
+        length: 8
       },
       assets: {
         files: [
@@ -172,6 +173,11 @@ module.exports = function (grunt) {
         files: [
           { expand: true, cwd: 'src/audio/', src: ['**'], dest: 'build/audio/' }
         ]
+      },
+      p2: {
+         files: [
+          { expand: true, cwd: 'src/js/', src: ['**'], dest: 'build/js/' }
+        ] 
       }
     },
 

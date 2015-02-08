@@ -6,8 +6,11 @@
   Game.prototype = {
 
     create: function () {
+        console.log(Phaser);
+        console.log(this);
         // Game functions
         this.setupBackground();
+        this.game.physics.startSystem(Phaser.Physics.ARCADE);
         this.setupPlayer();
         this.setupEnemies();
         this.setupBullets();
@@ -26,8 +29,8 @@
     },
     update: function () {
         this.checkCollisions();
-        this.spawnEnemies();
-        this.enemyFire();
+        //this.spawnEnemies();
+        //this.enemyFire();
         this.processPlayerInput();
         this.processDelayedEffects(); 
     },
