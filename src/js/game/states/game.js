@@ -41,7 +41,7 @@
     setupBackground: function () {
         //this.sea = this.add.tileSprite(0, 0, this.game.width, this.game.height, 'sea');
         //this.sea.autoScroll(0, 12);
-        this.background = this.game.add.sprite(0, 0, 'background');
+        this.background = this.game.add.sprite(0, 0, 'milkyway');
     },
     setupPlayer: function () {
         this.player = this.add.sprite(this.game.width / 2, this.game.height - 50, 'frigate_03');
