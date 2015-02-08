@@ -10,7 +10,7 @@
         console.log(this);
         // Game functions
         this.setupBackground();
-        this.game.physics.startSystem(Phaser.Physics.ARCADE);
+        this.game.physics.startSystem(Phaser.Physics.P2JS);
         this.setupPlayer();
         this.setupEnemies();
         this.setupBullets();
@@ -48,15 +48,14 @@
     },
     setupPlayer: function () {
         this.player = this.add.sprite(this.game.width / 2, this.game.height - 50, 'frigate_03');
+        this.physics.enable(this.player, Phaser.Physics.P2JS);
+        //this.game.physics.p2.enable(this.player);
         this.player.anchor.setTo(0.5, 0.5);
         this.player.animations.add('fly', [ 0, 1, 2 ], 20, true);
         this.player.animations.add('ghost', [ 3, 0, 3, 1 ], 20, true);
         this.player.play('fly');
-        this.physics.enable(this.player, Phaser.Physics.ARCADE);
         this.player.speed = 300;
         this.player.body.collideWorldBounds = true;
-        // 20 x 20 pixel hitbox, centered a little bit higher than the center
-        this.player.body.setSize(20, 20, 0, -5);
         // Player Properties
         this.weaponLevel = 0;
     },
@@ -64,7 +63,7 @@
         // Green enemy 'enemy'
         this.enemyPool = this.add.group();
         this.enemyPool.enableBody = true;
-        this.enemyPool.physicsBodyType = Phaser.Physics.ARCADE;
+        this.enemyPool.physicsBodyType = Phaser.Physics.P2JS;
         this.enemyPool.createMultiple(50, 'frigate_02');
         this.enemyPool.setAll('anchor.x', 0.5);
         this.enemyPool.setAll('anchor.y', 0.5);
@@ -86,7 +85,7 @@
         // White enemy 'shooter'
         this.shooterPool = this.add.group();
         this.shooterPool.enableBody = true;
-        this.shooterPool.physicsBodyType = Phaser.Physics.ARCADE;
+        this.shooterPool.physicsBodyType = Phaser.Physics.P2JS;
         this.shooterPool.createMultiple(20, 'frigate_01');
         this.shooterPool.setAll('anchor.x', 0.5);
         this.shooterPool.setAll('anchor.y', 0.5);
@@ -109,7 +108,7 @@
         // Boss sprite pool
         this.bossPool = this.add.group();
         this.bossPool.enableBody = true;
-        this.bossPool.physicsBodyType = Phaser.Physics.ARCADE;
+        this.bossPool.physicsBodyType = Phaser.Physics.P2JS;
         this.bossPool.createMultiple(1, 'boss');
         this.bossPool.setAll('anchor.x', 0.5);
         this.bossPool.setAll('anchor.y', 0.5);
@@ -131,7 +130,7 @@
     setupBullets: function () {
         this.enemyBulletPool = this.add.group();
         this.enemyBulletPool.enableBody = true;
-        this.enemyBulletPool.physicsBodyType = Phaser.Physics.ARCADE;
+        this.enemyBulletPool.physicsBodyType = Phaser.Physics.P2JS;
         this.enemyBulletPool.createMultiple(100, 'enemyBullet');
         this.enemyBulletPool.setAll('anchor.x', 0.5);
         this.enemyBulletPool.setAll('anchor.y', 0.5);
@@ -142,7 +141,7 @@
         this.bulletPool = this.add.group();
         // Enable physics to the whole sprite group
         this.bulletPool.enableBody = true;
-        this.bulletPool.physicsBodyType = Phaser.Physics.ARCADE;
+        this.bulletPool.physicsBodyType = Phaser.Physics.P2JS;
         // Add 100 'bullet' sprites in the group.
         // By default this uses the first frame of the sprite sheet and
         //   sets the initial state as non-existing (i.e. killed/dead)
@@ -160,7 +159,7 @@
     setupExplosions: function () {
         this.explosionPool = this.add.group();
         this.explosionPool.enableBody = true;
-        this.explosionPool.physicsBodyType = Phaser.Physics.ARCADE;
+        this.explosionPool.physicsBodyType = Phaser.Physics.P2JS;
         this.explosionPool.createMultiple(100, 'explosion');
         this.explosionPool.setAll('anchor.x', 0.5);
         this.explosionPool.setAll('anchor.y', 0.5);
@@ -172,7 +171,7 @@
         // Setup sprite group for Power-Ups
         this.powerUpPool = this.add.group();
         this.powerUpPool.enableBody = true;
-        this.powerUpPool.physicsBodyType = Phaser.Physics.ARCADE;
+        this.powerUpPool.physicsBodyType = Phaser.Physics.P2JS;
         this.powerUpPool.createMultiple(5, 'powerup1');
         this.powerUpPool.setAll('anchor.x', 0.5);
         this.powerUpPool.setAll('anchor.y', 0.5);
@@ -425,7 +424,7 @@
     spawnBoss: function () {
         this.bossApproaching = true;
         this.boss.reset(this.game.width / 2, 0, 250);
-        this.physics.enable(this.boss, Phaser.Physics.ARCADE);
+        this.physics.enable(this.boss, Phaser.Physics.P2JS);
         this.boss.body.velocity.y = 15;
         this.boss.play('fly');
     },
